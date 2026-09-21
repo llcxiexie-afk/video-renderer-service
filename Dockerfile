@@ -6,6 +6,7 @@ WORKDIR /app
 
 COPY main.py .
 
-RUN pip install fastapi uvicorn moviepy python-multipart
+# FORZAMOS LA VERSIÓN 1.0.3 DE MOVIEPY QUE ES ESTABLE
+RUN pip install fastapi uvicorn moviepy==1.0.3 python-multipart
 
 CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
